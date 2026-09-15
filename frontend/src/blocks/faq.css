@@ -1,0 +1,135 @@
+/* Contentor da Secção */
+.faq-section {
+  padding: 6rem 1.5rem;
+  background-color: #0A0F1E;
+  color: #ffffff;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Cabeçalho */
+.faq-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.faq-badge {
+  display: inline-block;
+  padding: 0.35rem 1rem;
+  border-radius: 9999px;
+  background-color: #0E1526;
+  border: 1px solid #1E293B;
+  color: #818CF8;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.25rem;
+}
+
+.faq-title {
+  font-size: 2.75rem;
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.faq-title-highlight {
+  background: linear-gradient(135deg, #60A5FA 0%, #A5B4FC 50%, #C084FC 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.faq-subtitle {
+  color: #94A3B8;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Lista de Acordeões */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  background-color: rgba(14, 21, 38, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.faq-item:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.faq-item.open {
+  border-color: rgba(99, 102, 241, 0.4);
+  background-color: rgba(14, 21, 38, 0.9);
+}
+
+/* Botão da Pergunta */
+.faq-question-btn {
+  width: 100%;
+  padding: 1.35rem 1.5rem;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1.05rem;
+  font-weight: 700;
+  gap: 1rem;
+}
+
+/* Ícone de Expandir/Colapsar (+ / -) */
+.faq-icon-circle {
+  width: 2rem;
+  height: 2rem;
+  min-width: 2rem;
+  border-radius: 9999px;
+  background-color: #0E1526;
+  border: 1px solid #1E293B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94A3B8;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: transform 0.3s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.faq-item.open .faq-icon-circle {
+  transform: rotate(45deg);
+  background-color: #6366F1;
+  border-color: #6366F1;
+  color: #ffffff;
+}
+
+/* Resposta */
+.faq-answer-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+}
+
+.faq-item.open .faq-answer-wrapper {
+  max-height: 1000px;
+  transition: max-height 0.3s cubic-bezier(1, 0, 1, 0);
+}
+
+.faq-answer {
+  padding: 0 1.5rem 1.35rem 1.5rem;
+  color: #94A3B8;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}

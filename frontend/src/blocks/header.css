@@ -1,0 +1,179 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: transparent;
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(7, 11, 24, 0.8);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+.navbar-container {
+  max-width: 1600px;
+  height: 92px;
+  margin: 0 auto;
+  padding: 0 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.web_site {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #f4f7ff;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+}
+
+.logo-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #5b6cff 0%, #8b5cf6 100%);
+  box-shadow: 0 0 22px rgba(96, 126, 255, 0.55);
+  font-size: 1.2rem;
+  line-height: 1;
+  color: white;
+}
+
+.logo-text {
+  font-size: clamp(1.4rem, 1.5vw, 2rem);
+  color: #f3f4f6;
+}
+
+.logo-text span {
+  color: #5f6fff;
+}
+
+.navbar-links,
+.navbar-actions {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-links {
+  gap: 34px;
+}
+
+.navbar-links a,
+.login-button {
+  color: rgba(226, 232, 240, 0.9);
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.navbar-links a:hover,
+.login-button:hover {
+  color: #ffffff;
+}
+
+.login-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 104px;
+  height: 46px;
+  padding: 0 20px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.55);
+  font: inherit;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  border-color: rgba(34, 211, 238, 0.75);
+  background: rgba(34, 211, 238, 0.12);
+  box-shadow: 0 8px 24px rgba(34, 211, 238, 0.14);
+}
+
+.login-button:focus-visible {
+  outline: 3px solid rgba(34, 211, 238, 0.35);
+  outline-offset: 3px;
+}
+
+.navbar-actions {
+  gap: 18px;
+}
+
+.request_access {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 150px;
+  height: 46px;
+  padding: 0 18px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #5b6cff 0%, #8b5cf6 100%);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 0 24px rgba(123, 92, 255, 0.55);
+}
+
+.mobile-menu-button {
+  display: none;
+  border: 0;
+  background: transparent;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .navbar-links,
+  .navbar-actions {
+    display: none;
+  }
+
+  .navbar-container {
+    height: 72px;
+    padding: 0 18px;
+  }
+
+  .web_site {
+    gap: 10px;
+  }
+
+  .logo-mark {
+    width: 30px;
+    height: 30px;
+  }
+
+  .mobile-menu-button {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 18px 20px 24px;
+    background: rgba(7, 11, 24, 0.82);
+    backdrop-filter: blur(12px);
+  }
+
+  .mobile-menu a {
+    color: rgba(226, 232, 240, 0.9);
+    text-decoration: none;
+    font-size: 1rem;
+  }
+}

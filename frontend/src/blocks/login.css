@@ -1,0 +1,254 @@
+/* Login.css */
+
+.login-container {
+  width: 100%;
+  padding-bottom: 4px;
+  color: #f8fafc;
+}
+
+.login-container h2 {
+  margin: 0 0 8px;
+  color: #f8fafc;
+  font-size: 1.75rem;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.login-container h2 span {
+  color: #22d3ee;
+}
+
+.login-container > p {
+  margin: 0 0 24px;
+  color: #94a3b8;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.login-container form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.login-container label {
+  color: #cbd5e1;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.login-container input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  outline: none;
+  background: #1e293b;
+  color: #f8fafc;
+  font: inherit;
+}
+
+.login-container input::placeholder {
+  color: #64748b;
+}
+
+.login-container input:focus {
+  border-color: #22d3ee;
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.15);
+}
+
+.login-container form button {
+  width: 100%;
+  margin-top: 4px;
+  padding: 12px 16px;
+  border: 0;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #06b6d4, #2563eb);
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.login-container form button:hover {
+  filter: brightness(1.1);
+}
+
+.login-container form button:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+.login-switch {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 18px 0 0;
+  padding: 4px 0;
+  color: #94a3b8;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.login-switch-button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #22d3ee;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.login-switch-button:hover {
+  text-decoration: underline;
+}
+
+@media (max-height: 620px) {
+  .login-container h2 {
+    font-size: 1.55rem;
+  }
+
+  .login-container > p {
+    margin-bottom: 16px;
+  }
+
+  .login-container form {
+    gap: 11px;
+  }
+
+  .login-container input {
+    padding: 10px 14px;
+  }
+
+  .login-container form button {
+    padding: 10px 16px;
+  }
+
+  .login-switch {
+    margin-top: 12px;
+  }
+}
+
+.login-error {
+  margin-bottom: 16px;
+  padding: 10px 12px;
+  border: 1px solid rgba(248, 113, 113, 0.3);
+  border-radius: 8px;
+  background: rgba(239, 68, 68, 0.1);
+  color: #fca5a5;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+/* Container Centralizado */
+.login-page {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #060913;
+  color: #ffffff;
+  padding: 2rem 1.5rem;
+}
+
+.login-page__welcome {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+/* Formulário */
+.login-page__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 400px;
+  background: #0B1120;
+  border: 1px solid #1E293B;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+.login-page__form input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background-color: #0E1526;
+  border: 1px solid #1E293B;
+  border-radius: 0.5rem;
+  color: #ffffff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.login-page__form input::placeholder {
+  color: #64748B;
+}
+
+.login-page__form input:focus {
+  border-color: #6366F1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+/* Botão de Entrar */
+.login-page__button-container {
+  margin-top: 0.5rem;
+}
+
+.login-page__button {
+  width: 100%;
+  padding: 0.85rem;
+  background: linear-gradient(135deg, #3B82F6 0%, #6366F1 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.login-page__button:hover {
+  opacity: 0.95;
+}
+
+.login-page__button:active {
+  transform: scale(0.99);
+}
+
+/* Link para Registro */
+.login-page__signup {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #94A3B8;
+}
+
+.login-page__signup-link {
+  color: #6366F1;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 0.25rem;
+  transition: color 0.2s ease;
+}
+
+.login-page__signup-link:hover {
+  color: hsl(236, 35%, 92%);
+  text-decoration: underline;
+}
