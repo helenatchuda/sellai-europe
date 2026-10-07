@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import AICreatorStudioCard from './AICreatorStudioCard';
 
-function Hero({ onOpenLogin }) {
+function Hero({ onOpenRegister }) {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!email) return;
-    setSubmitted(true);
     
-    if (onOpenLogin) {
-      onOpenLogin();
+    if (!email.trim()) return;
+    setSubmitted(true);
+
+    if (onOpenRegister) {
+      onOpenRegister();
     }
   };
 
@@ -33,6 +34,7 @@ function Hero({ onOpenLogin }) {
           <form className="hero-form" onSubmit={handleSubmit}>
             <input
               type="email"
+              required
               placeholder="o-teu@email.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -43,9 +45,9 @@ function Hero({ onOpenLogin }) {
           </form>
 
           <div className="hero-features">
-            <span>✓ Sem cartão de crédito</span>
-            <span>✓ RGPD Compliant</span>
-            <span>✓ Feito em Portugal</span>
+            <span> Sem cartão de crédito</span>
+            <span> RGPD Compliant</span>
+            <span> Feito em Portugal</span>
           </div>
         </div>
 

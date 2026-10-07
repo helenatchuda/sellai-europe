@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
-function Pricing() {
+function Pricing({ onOpenRegister }) {
   const [isAnnual, setIsAnnual] = useState(false);
-  const [selectedPlan, setSelectedPlan] = useState(null);
 
   const plans = [
     {
@@ -25,7 +24,7 @@ function Pricing() {
       name: 'Pro',
       subtitle: 'Para criadores a crescer.',
       monthlyPrice: 29,
-      annualPrice: 22,
+      annualPrice: 21.75,
       fee: '5% por venda',
       featured: true,
       popularLabel: 'Mais popular',
@@ -44,7 +43,7 @@ function Pricing() {
       name: 'Business',
       subtitle: 'Para equipas e empresas.',
       monthlyPrice: 79,
-      annualPrice: 59,
+      annualPrice: 59.25,
       fee: '2% por venda',
       featured: false,
       buttonText: 'Falar com a equipa',
@@ -103,6 +102,7 @@ function Pricing() {
         <div className="pricing-grid">
           {plans.map((plan, index) => {
             const price = isAnnual ? plan.annualPrice : plan.monthlyPrice;
+            const annualTotal = price * 12;
             
             return (
               <div
@@ -121,9 +121,14 @@ function Pricing() {
 
                   <div className="plan-price-box">
                     <div className="plan-price">
-                      €{price}
+                      €{price.toLocaleString('pt-PT', { minimumFractionDigits: price % 1 ? 2 : 0 })}
                       <span className="plan-period">/mês</span>
                     </div>
+                    {isAnnual && price > 0 && (
+                      <span className="plan-billing-note">
+                        €{annualTotal.toLocaleString('pt-PT', { minimumFractionDigits: 0 })} cobrados por ano
+                      </span>
+                    )}
                     <span className="plan-fee">{plan.fee}</span>
                   </div>
 
@@ -137,14 +142,15 @@ function Pricing() {
                   </ul>
                 </div>
 
-                <button
-                  className={`plan-btn ${selectedPlan === plan.name ? 'selected' : ''}`}
-                  onClick={() => setSelectedPlan(plan.name)}
-                  aria-pressed={selectedPlan === plan.name}
-                  type="button"
-                >
-                  {plan.buttonText}
-                </button>
+                {plan.name === 'Business' ? (
+                  <a className="plan-btn" href="mailto:suporte@sellai.eu?subject=Plano%20Business">
+                    {plan.buttonText}
+                  </a>
+                ) : (
+                  <button className="plan-btn" onClick={onOpenRegister} type="button">
+                    {plan.buttonText}
+                  </button>
+                )}
               </div>
             );
           })}

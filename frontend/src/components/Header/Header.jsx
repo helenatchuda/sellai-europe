@@ -39,8 +39,8 @@ function Header({ onOpenLogin, onOpenRegister }) {
         </a>
 
         <nav className="navbar-links">
-          <a href="#produto">Produto</a>
-          <a href="#porque-europa">Porquê Europa</a>
+          <a href="#produto">Funcionalidades</a>
+          <a href="#pagamentos">Pagamentos</a>
           <a href="#precos">Preços</a>
           <a href="#faq">FAQ</a>
         </nav>
@@ -51,27 +51,28 @@ function Header({ onOpenLogin, onOpenRegister }) {
           </button>
 
           <a href="#access" className="request_access" onClick={handleRegisterClick}>
-            Pedir Acesso
+            Começar grátis
           </a>
         </div>
 
         <button
           className="mobile-menu-button"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Abrir menu"
+          aria-label={mobileMenuOpen ? 'Fechar menu' : 'Abrir menu'}
+          aria-expanded={mobileMenuOpen}
           type="button"
         >
-          ☰
+          {mobileMenuOpen ? '✕' : '☰'}
         </button>
       </div>
 
       {mobileMenuOpen && (
         <div className="mobile-menu">
           <a href="#produto" onClick={() => setMobileMenuOpen(false)}>
-            Produto
+            Funcionalidades
           </a>
-          <a href="#porque-europa" onClick={() => setMobileMenuOpen(false)}>
-            Porquê Europa
+          <a href="#pagamentos" onClick={() => setMobileMenuOpen(false)}>
+            Pagamentos
           </a>
           <a href="#precos" onClick={() => setMobileMenuOpen(false)}>
             Preços
@@ -87,7 +88,7 @@ function Header({ onOpenLogin, onOpenRegister }) {
             className="request_access"
             onClick={handleRegisterClick}
           >
-            Pedir Acesso
+            Começar grátis
           </a>
         </div>
       )}

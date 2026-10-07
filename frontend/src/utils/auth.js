@@ -11,13 +11,13 @@ const checkResponse = (res) => {
 };
 
 // 1. Registo de Novo Utilizador / Criador
-export const register = ({ name, email, password }) => {
+export const register = ({ name, email, password , confirmPassword}) => {
   return fetch(`${BASE_URL}/signup`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ name, email, password }),
+    body: JSON.stringify({ name, email, password,confirmPassword: confirmPassword}),
   }).then(checkResponse);
 };
 
@@ -28,7 +28,7 @@ export const authorize = ({ email, password }) => {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ email, password }),
+    body: JSON.stringify({ email, password}),
   })
     .then(checkResponse)
     .then((data) => {

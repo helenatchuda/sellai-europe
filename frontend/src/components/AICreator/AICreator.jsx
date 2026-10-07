@@ -48,7 +48,7 @@ export default function AICreator() {
   ];
 
   return (
-    <section className="creator-section">
+    <section id="ai-creator" className="creator-section">
       <div className="creator-container">
         
         {/* Lado Esquerdo: Passos & Ação */}

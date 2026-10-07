@@ -102,7 +102,29 @@
   color: #94A3B8;
   font-size: 0.875rem;
   line-height: 1.6;
-  margin: 0;
+  margin: 0 0 1.5rem;
+}
+
+.product-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #a5b4fc;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+
+.product-card-link:hover,
+.product-card-link:focus-visible {
+  gap: 0.5rem;
+  color: #c4b5fd;
+}
+
+.product-card-link:focus-visible {
+  outline: 2px solid #a5b4fc;
+  outline-offset: 4px;
 }
 
 /* Responsividade da Grelha */

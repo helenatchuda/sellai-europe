@@ -193,6 +193,13 @@
   margin-bottom: 1.5rem;
 }
 
+.plan-billing-note {
+  display: block;
+  margin-top: 0.35rem;
+  color: #94A3B8;
+  font-size: 0.8rem;
+}
+
 .plan-price {
   font-size: 2.75rem;
   font-weight: 900;
@@ -244,7 +251,11 @@
 
 /* Botões do Card */
 .plan-btn {
+  display: flex;
   width: 100%;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
   padding: 0.85rem 1rem;
   border-radius: 0.75rem;
   font-size: 0.95rem;
@@ -253,6 +264,8 @@
   border: 1px solid #1E293B;
   background-color: #0E1526;
   color: #ffffff;
+  text-align: center;
+  text-decoration: none;
   transition: all 0.2s ease;
 }
 

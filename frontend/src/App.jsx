@@ -13,9 +13,13 @@ import WhyEurope from './components/WhyEurope/WhyEurope';
 import Pricing from './components/Pricing/Pricing';
 import FAQ from './components/FAQ/FAQ';
 import Footer from './components/Footer/Footer';
-import Login from './components/Login/Login';
+import Login from './components/Login/login';
 import Register from './components/Register/Register';
 import Popup from './components/Popup/Popup';
+import AICreatorStudioPage from './components/AICreatorStudioPage/AICreatorStudioPage';
+import AffiliatesPage from './components/Affiliates/AffiliatesPage';
+import AnalyticsPage from './components/Analytics/AnalyticsPage';
+import MultiLanguagePage from './components/MultiLanguagePage/MultiLanguagePage';
 function App() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
@@ -79,6 +83,22 @@ function App() {
     setIsLoginOpen(true);
   };
 
+  if (window.location.pathname === '/ai-creator-studio') {
+    return <AICreatorStudioPage />;
+  }
+
+  if (window.location.pathname === '/afiliados') {
+    return <AffiliatesPage />;
+  }
+
+  if (window.location.pathname === '/analytics') {
+    return <AnalyticsPage />;
+  }
+
+  if (window.location.pathname === '/multi-idioma-ia') {
+    return <MultiLanguagePage />;
+  }
+
   // 5. Criar Produto (Manual ou via IA)
   const handleAddProduct = async (newProductData) => {
     try {
@@ -100,7 +120,7 @@ function App() {
       />
 
       <main>
-        <Hero onOpenLogin={() => setIsLoginOpen(true)} />
+        <Hero onOpenRegister={() => setIsRegisterOpen(true)} />
 
         <Product
           products={products}
@@ -109,7 +129,7 @@ function App() {
 
         <AICreator onAddProduct={handleAddProduct} />
         <WhyEurope />
-        <Pricing />
+        <Pricing onOpenRegister={() => setIsRegisterOpen(true)} />
         <FAQ />
       </main>
 
